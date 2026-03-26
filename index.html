@@ -224,7 +224,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 70px;
+            top: 80px;
             left: 0;
             right: 0;
             background: white;
@@ -252,9 +252,14 @@
             transition: all 0.3s ease;
         }
 
-        @media (max-width: 768px) {
+        .desktop-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
             .desktop-menu {
-                display: none;
+                display: none !important;
             }
 
             .hamburger {
@@ -369,7 +374,7 @@
                 <div class="flex items-center">
                     <h1 class="text-2xl font-bold" style="color: var(--coffee-dark);">CAFE AMADO</h1>
                 </div>
-                <div class="desktop-menu flex gap-8">
+                <div class="desktop-menu gap-8">
                     <a href="#home" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Home</a>
                     <a href="#menu" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Menu</a>
                     <a href="#reviews" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Reviews</a>
