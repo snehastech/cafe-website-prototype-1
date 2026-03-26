@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFE AMADO - Best Cafe in Bhopal | Specialty Coffee • Sourdough • Brick Oven Pizzas</title>
+    <meta name="description" content="CAFE AMADO - Premium cafe in Arera Colony, Bhopal. Specialty coffee, sourdough bakery, brick oven pizzas. Perfect work-friendly ambiance with WiFi. Rated 4.4⭐ by 1500+ customers.">
+    <meta name="keywords" content="best cafe in bhopal, cafe amado, specialty coffee bhopal, brick oven pizza, arera colony cafe, work cafe bhopal, sourdough bhopal">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --coffee-dark: #6F4E37;
+            --coffee-medium: #8B4513;
+            --cream: #F5F5DC;
+            --cream-light: #FAEBD7;
+            --beige: #D2B48C;
+            --soft-black: #2C2C2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--soft-black);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://api.kuse.ai/api/folder/v1/file/658c25393705c97d872c70937c0acfb66dcd1e7572fd1c745112df236a7048c4_2564722.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: var(--coffee-dark);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--coffee-dark);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(111, 78, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--coffee-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-item-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(111, 78, 55, 0.2);
+        }
+
+        .menu-item-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .menu-item-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .testimonial-card {
+            background: var(--cream-light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(111, 78, 55, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--coffee-dark);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-section {
+                background-attachment: scroll;
+            }
+
+            .menu-item-card img {
+                height: 200px;
+            }
+
+            .gallery-item {
+                height: 200px;
+            }
+        }
+
+        .star-rating {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--coffee-dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--coffee-medium);
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--beige);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--coffee-dark);
+        }
+
+        .contact-form button {
+            background: var(--coffee-dark);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: var(--coffee-medium);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(111, 78, 55, 0.3);
+        }
+
+        .kuse-branding {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--soft-black);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .kuse-branding:hover {
+            color: var(--coffee-dark);
+        }
+
+        .kuse-branding svg {
+            height: 1.2em;
+        }
+
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 32px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-sticky">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold" style="color: var(--coffee-dark);">CAFE AMADO</h1>
+                </div>
+                <div class="desktop-menu flex gap-8">
+                    <a href="#home" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Menu</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Reviews</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Gallery</a>
+                    <a href="#about" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#6F4E37] font-medium transition-colors">Contact</a>
+                </div>
+                <div class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home" class="block py-3 text-gray-700 hover:text-[#6F4E37] font-medium" onclick="toggleMobileMenu()">Home</a>
+            <a href="#menu" class="block py-3 text-gray-700 hover:text-[#6F4E37] font-medium" onclick="toggleMobileMenu()">Menu</a>
+            <a href="#reviews" class="block py-3 text-gray-700 hover:text-[#6F4E37] font-medium" onclick="toggleMobileMenu()">Reviews</a>
+            <a href="#gallery" class="block py-3 text-gray-700 hover:text-[#6F4E37] font-medium" onclick="toggleMobileMenu()">Gallery</a>
+            <a href="#about" class="block py-3 text-gray-700 hover:text-[#6F4E37] font-medium" onclick="toggleMobileMenu()">About</a>
+            <a href="#contact" class="block py-3 text-gray-700 hover:text-[#6F4E37] font-medium" onclick="toggleMobileMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="fade-in visible">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">CAFE AMADO</h1>
+                <p class="text-xl md:text-2xl mb-4 font-light">Specialty Coffee • Sourdough • Brick Oven Pizzas</p>
+                <div class="flex items-center justify-center gap-2 mb-8">
+                    <span class="star-rating">⭐⭐⭐⭐⭐</span>
+                    <span class="text-lg">4.4 (1,500+ reviews)</span>
+                </div>
+                <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">Premium cafe with soothing ambiance, natural light, great music, and work-friendly WiFi in the heart of Bhopal</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="btn-primary">Reserve a Table</a>
+                    <a href="tel:06262424888" class="btn-secondary">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Featured Menu</h2>
+                <p class="section-subtitle">Discover our signature dishes crafted with passion and premium ingredients</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item-card fade-in">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/3841da3171eedb5d70ea8525be6e821fac2ee637f9e5d76e358812601eff02ea_2564723.jpeg" alt="Cappuccino Hazelnut">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--coffee-dark);">Cappuccino Hazelnut</h3>
+                        <p class="text-gray-600">Rich espresso with velvety steamed milk and hazelnut notes</p>
+                    </div>
+                </div>
+                <div class="menu-item-card fade-in">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/2553a3a4101c0479c07663f97ef6ae0eed20bb607f320b918292b91bc89ef0ee_2564724.jpeg" alt="Farmhouse Pizza">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--coffee-dark);">Farmhouse Pizza</h3>
+                        <p class="text-gray-600">Brick oven perfection with fresh vegetables and artisan cheese</p>
+                    </div>
+                </div>
+                <div class="menu-item-card fade-in">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/f3a2f0a8ab603567b0ecdff0c5f1b568aab0accc56c4c91c7569a47e45a85a9c_2564730.jpeg" alt="Shakshuka">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--coffee-dark);">Shakshuka</h3>
+                        <p class="text-gray-600">Poached eggs in spiced tomato sauce with fresh herbs</p>
+                    </div>
+                </div>
+                <div class="menu-item-card fade-in">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/8cfdf126e8be30849fbafce7ef3aa0fe5fcd5fe41b8a8cc4aa00074c954f9efe_2564727.jpeg" alt="Vietnamese Coffee">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--coffee-dark);">Vietnamese Coffee</h3>
+                        <p class="text-gray-600">Strong drip coffee with sweetened condensed milk</p>
+                    </div>
+                </div>
+                <div class="menu-item-card fade-in">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/35d22e49e028b57b2543c74d7a79570a0272321db30b250d2142016e12f9a345_2564732.jpeg" alt="Mango Cheesecake">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--coffee-dark);">Mango Cheesecake</h3>
+                        <p class="text-gray-600">Creamy cheesecake with fresh mango compote</p>
+                    </div>
+                </div>
+                <div class="menu-item-card fade-in">
+                    <div class="h-[250px] flex items-center justify-center" style="background: linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%);">
+                        <div class="text-center p-6">
+                            <h3 class="text-2xl font-semibold mb-4" style="color: var(--coffee-dark);">Explore Full Menu</h3>
+                            <a href="#menu" class="btn-primary">View All Items</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20" style="background: var(--cream-light);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Our Complete Menu</h2>
+                <p class="section-subtitle">From specialty coffee to brick oven pizzas, explore our diverse culinary offerings</p>
+            </div>
+
+            <div class="mb-16 fade-in">
+                <h3 class="text-3xl font-bold mb-8" style="color: var(--coffee-dark);">☕ Coffee & Beverages</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Cappuccino Hazelnut</h4>
+                        <p class="text-gray-600">Rich espresso with hazelnut flavor</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Vietnamese Coffee</h4>
+                        <p class="text-gray-600">Strong drip with condensed milk</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Espresso</h4>
+                        <p class="text-gray-600">Bold and smooth single shot</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Latte</h4>
+                        <p class="text-gray-600">Creamy milk with espresso</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Americano</h4>
+                        <p class="text-gray-600">Classic espresso with hot water</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Cold Brew</h4>
+                        <p class="text-gray-600">Smooth and refreshing</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16 fade-in">
+                <h3 class="text-3xl font-bold mb-8" style="color: var(--coffee-dark);">🍕 Brick Oven Pizzas</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Farmhouse Pizza</h4>
+                        <p class="text-gray-600">Fresh vegetables and artisan cheese</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Margherita</h4>
+                        <p class="text-gray-600">Classic tomato, basil, mozzarella</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Pepperoni</h4>
+                        <p class="text-gray-600">Spicy pepperoni with cheese</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Veggie Supreme</h4>
+                        <p class="text-gray-600">Loaded with garden vegetables</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">BBQ Chicken</h4>
+                        <p class="text-gray-600">Tangy BBQ sauce with chicken</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Mushroom Truffle</h4>
+                        <p class="text-gray-600">Gourmet mushrooms with truffle oil</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16 fade-in">
+                <h3 class="text-3xl font-bold mb-8" style="color: var(--coffee-dark);">🍝 Pasta & Continental</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Spaghetti Aglio Olio</h4>
+                        <p class="text-gray-600">Garlic, olive oil, and chili flakes</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Veg Lasagna</h4>
+                        <p class="text-gray-600">Layered pasta with vegetables</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Shakshuka</h4>
+                        <p class="text-gray-600">Poached eggs in tomato sauce</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Penne Arrabbiata</h4>
+                        <p class="text-gray-600">Spicy tomato sauce pasta</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Fettuccine Alfredo</h4>
+                        <p class="text-gray-600">Creamy parmesan sauce</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Mexican Burrito Bowl</h4>
+                        <p class="text-gray-600">Rice, beans, and fresh salsa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16 fade-in">
+                <h3 class="text-3xl font-bold mb-8" style="color: var(--coffee-dark);">🍰 Desserts</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Mango Cheesecake</h4>
+                        <p class="text-gray-600">Creamy with mango compote</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Bombolini Donuts</h4>
+                        <p class="text-gray-600">Italian filled donuts</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Tiramisu</h4>
+                        <p class="text-gray-600">Classic Italian coffee dessert</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Chocolate Lava Cake</h4>
+                        <p class="text-gray-600">Warm molten chocolate center</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Apple Pie</h4>
+                        <p class="text-gray-600">Homemade with vanilla ice cream</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Brownie Sundae</h4>
+                        <p class="text-gray-600">Warm brownie with ice cream</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fade-in">
+                <h3 class="text-3xl font-bold mb-8" style="color: var(--coffee-dark);">🍜 Asian Dishes</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Pad Thai Noodles</h4>
+                        <p class="text-gray-600">Authentic Thai stir-fried noodles</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Hakka Noodles</h4>
+                        <p class="text-gray-600">Indo-Chinese favorite</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Fried Rice</h4>
+                        <p class="text-gray-600">Vegetable fried rice</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Thai Red Curry</h4>
+                        <p class="text-gray-600">Coconut curry with vegetables</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Spring Rolls</h4>
+                        <p class="text-gray-600">Crispy vegetable rolls</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Dim Sum</h4>
+                        <p class="text-gray-600">Steamed dumplings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in text-center mb-16">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <span class="text-6xl font-bold" style="color: var(--coffee-dark);">4.4</span>
+                    <div>
+                        <div class="star-rating text-3xl">⭐⭐⭐⭐⭐</div>
+                        <p class="text-gray-600">Based on 1,500+ reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-4 italic">"High quality food, soothing ambiance, perfect work cafe with WiFi. I come here almost every day to work and enjoy their amazing coffee!"</p>
+                    <p class="font-semibold" style="color: var(--coffee-dark);">— Priya Sharma</p>
+                    <p class="text-sm text-gray-500">Regular Customer</p>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-4 italic">"Great food variety including pizza, pasta, and drinks. The brick oven pizzas are absolutely incredible. Best cafe in Bhopal!"</p>
+                    <p class="font-semibold" style="color: var(--coffee-dark);">— Rahul Verma</p>
+                    <p class="text-sm text-gray-500">Food Enthusiast</p>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-4 italic">"Amazing specialty coffee and brick oven pizzas. The Vietnamese coffee is my favorite. The atmosphere is perfect for both work and relaxation."</p>
+                    <p class="font-semibold" style="color: var(--coffee-dark);">— Anjali Patel</p>
+                    <p class="text-sm text-gray-500">Coffee Lover</p>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="star-rating mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-4 italic">"Perfect spot for work with natural light and great music. The staff is friendly and the food is consistently excellent. Highly recommend!"</p>
+                    <p class="font-semibold" style="color: var(--coffee-dark);">— Vikram Singh</p>
+                    <p class="text-sm text-gray-500">Freelancer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20" style="background: var(--cream-light);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">Experience the ambiance and culinary artistry of CAFE AMADO</p>
+            </div>
+
+            <div class="mb-8 flex justify-center gap-4 flex-wrap">
+                <button onclick="filterGallery('all')" class="gallery-filter-btn btn-primary" data-filter="all">All</button>
+                <button onclick="filterGallery('food')" class="gallery-filter-btn" data-filter="food" style="background: var(--beige); color: var(--soft-black); padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 500;">Food</button>
+                <button onclick="filterGallery('drinks')" class="gallery-filter-btn" data-filter="drinks" style="background: var(--beige); color: var(--soft-black); padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 500;">Drinks</button>
+                <button onclick="filterGallery('interior')" class="gallery-filter-btn" data-filter="interior" style="background: var(--beige); color: var(--soft-black); padding: 12px 28px; border-radius: 50px; border: none; cursor: pointer; font-weight: 500;">Interior</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+                <div class="gallery-item fade-in" data-category="food" onclick="openLightbox('https://api.kuse.ai/api/folder/v1/file/2553a3a4101c0479c07663f97ef6ae0eed20bb607f320b918292b91bc89ef0ee_2564724.jpeg')">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/2553a3a4101c0479c07663f97ef6ae0eed20bb607f320b918292b91bc89ef0ee_2564724.jpeg" alt="Farmhouse Pizza">
+                    <div class="gallery-overlay">
+                        <span class="text-white text-xl font-semibold">Farmhouse Pizza</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-category="drinks" onclick="openLightbox('https://api.kuse.ai/api/folder/v1/file/3841da3171eedb5d70ea8525be6e821fac2ee637f9e5d76e358812601eff02ea_2564723.jpeg')">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/3841da3171eedb5d70ea8525be6e821fac2ee637f9e5d76e358812601eff02ea_2564723.jpeg" alt="Cappuccino Hazelnut">
+                    <div class="gallery-overlay">
+                        <span class="text-white text-xl font-semibold">Cappuccino Hazelnut</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-category="food" onclick="openLightbox('https://api.kuse.ai/api/folder/v1/file/f3a2f0a8ab603567b0ecdff0c5f1b568aab0accc56c4c91c7569a47e45a85a9c_2564730.jpeg')">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/f3a2f0a8ab603567b0ecdff0c5f1b568aab0accc56c4c91c7569a47e45a85a9c_2564730.jpeg" alt="Shakshuka">
+                    <div class="gallery-overlay">
+                        <span class="text-white text-xl font-semibold">Shakshuka</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-category="drinks" onclick="openLightbox('https://api.kuse.ai/api/folder/v1/file/8cfdf126e8be30849fbafce7ef3aa0fe5fcd5fe41b8a8cc4aa00074c954f9efe_2564727.jpeg')">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/8cfdf126e8be30849fbafce7ef3aa0fe5fcd5fe41b8a8cc4aa00074c954f9efe_2564727.jpeg" alt="Vietnamese Coffee">
+                    <div class="gallery-overlay">
+                        <span class="text-white text-xl font-semibold">Vietnamese Coffee</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-category="food" onclick="openLightbox('https://api.kuse.ai/api/folder/v1/file/35d22e49e028b57b2543c74d7a79570a0272321db30b250d2142016e12f9a345_2564732.jpeg')">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/35d22e49e028b57b2543c74d7a79570a0272321db30b250d2142016e12f9a345_2564732.jpeg" alt="Mango Cheesecake">
+                    <div class="gallery-overlay">
+                        <span class="text-white text-xl font-semibold">Mango Cheesecake</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-category="interior" onclick="openLightbox('https://api.kuse.ai/api/folder/v1/file/658c25393705c97d872c70937c0acfb66dcd1e7572fd1c745112df236a7048c4_2564722.jpeg')">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/658c25393705c97d872c70937c0acfb66dcd1e7572fd1c745112df236a7048c4_2564722.jpeg" alt="Cafe Interior">
+                    <div class="gallery-overlay">
+                        <span class="text-white text-xl font-semibold">Cozy Interior</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightboxImage" src="" alt="Gallery Image">
+    </div>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">About CAFE AMADO</h2>
+                <p class="section-subtitle">Where passion meets perfection in every cup and bite</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <img src="https://api.kuse.ai/api/folder/v1/file/658c25393705c97d872c70937c0acfb66dcd1e7572fd1c745112df236a7048c4_2564722.jpeg" alt="CAFE AMADO Interior" class="rounded-2xl shadow-2xl">
+                </div>
+
+                <div class="fade-in">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--coffee-dark);">Our Story</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        CAFE AMADO was born from a passion for exceptional coffee and artisan food. Located in the heart of Arera Colony, Bhopal, we've created a space where quality meets comfort, and every visit feels like coming home.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Our specialty coffee is sourced from the finest beans and crafted by expert baristas. Our sourdough bakery produces fresh bread daily, and our brick oven pizzas are made with authentic techniques and premium ingredients.
+                    </p>
+
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--coffee-dark);">What Makes Us Special</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl">☕</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Specialty Coffee</h4>
+                                <p class="text-gray-600">Premium beans, expert roasting, perfect brewing</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl">🍞</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Artisan Sourdough</h4>
+                                <p class="text-gray-600">Traditional fermentation, fresh daily</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl">🍕</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Brick Oven Pizzas</h4>
+                                <p class="text-gray-600">Authentic Italian technique, premium toppings</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-2xl">💼</span>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Work-Friendly Space</h4>
+                                <p class="text-gray-600">Fast WiFi, natural light, comfortable seating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20" style="background: var(--cream-light);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Visit us or reach out - we'd love to hear from you</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--coffee-dark);">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <span class="text-2xl">📍</span>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1">Address</h4>
+                                    <p class="text-gray-600">2nd floor, E-2/69, Arera Colony, Bhopal, Madhya Pradesh</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="text-2xl">📞</span>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1">Phone</h4>
+                                    <a href="tel:06262424888" class="text-gray-600 hover:text-[#6F4E37] transition-colors">062624 24888</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="text-2xl">⏰</span>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1">Opening Hours</h4>
+                                    <p class="text-gray-600">9:00 AM onwards, Daily</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex flex-col gap-3">
+                            <a href="tel:06262424888" class="btn-primary text-center">Call Now</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Arera+Colony+Bhopal" target="_blank" class="btn-primary text-center" style="background: var(--coffee-medium);">Get Directions</a>
+                            <a href="#" class="btn-primary text-center" style="background: var(--beige); color: var(--soft-black);">Reserve via Zomato</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.6977777777777!2d77.4166667!3d23.2333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE0JzAwLjAiTiA3N8KwMjUnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--coffee-dark);">Send Us a Message</h3>
+                        <form class="contact-form space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2" style="color: var(--soft-black);">Your Name</label>
+                                <input type="text" placeholder="Enter your name" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold mb-2" style="color: var(--soft-black);">Email Address</label>
+                                <input type="email" placeholder="your.email@example.com" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold mb-2" style="color: var(--soft-black);">Phone Number</label>
+                                <input type="tel" placeholder="Your phone number">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold mb-2" style="color: var(--soft-black);">Message</label>
+                                <textarea rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white text-center">
+        <div class="max-w-4xl mx-auto px-4 fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" style="color: var(--coffee-dark);">Ready to Experience CAFE AMADO?</h2>
+            <p class="text-xl text-gray-600 mb-10">Join us for exceptional coffee, delicious food, and a warm atmosphere</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:06262424888" class="btn-primary">Call to Reserve</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Arera+Colony+Bhopal" target="_blank" class="btn-primary" style="background: var(--coffee-medium);">Get Directions</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12" style="background: var(--soft-black); color: white;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: var(--beige);">CAFE AMADO</h3>
+                    <p class="text-gray-300 mb-4">Premium cafe experience in the heart of Bhopal</p>
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm text-gray-400">4.4 (1,500+ reviews)</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: var(--beige);">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#menu" class="text-gray-300 hover:text-white transition-colors">Menu</a></li>
+                        <li><a href="#reviews" class="text-gray-300 hover:text-white transition-colors">Reviews</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: var(--beige);">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📍 2nd floor, E-2/69</li>
+                        <li>Arera Colony, Bhopal</li>
+                        <li>📞 <a href="tel:06262424888" class="hover:text-white transition-colors">062624 24888</a></li>
+                        <li>⏰ 9 AM onwards, Daily</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: var(--beige);">Follow Us</h4>
+                    <div class="flex gap-4 mb-4">
+                        <a href="#" class="text-2xl hover:text-[#D2B48C] transition-colors">📱</a>
+                        <a href="#" class="text-2xl hover:text-[#D2B48C] transition-colors">📘</a>
+                        <a href="#" class="text-2xl hover:text-[#D2B48C] transition-colors">🍽️</a>
+                    </div>
+                    <p class="text-sm text-gray-400">Instagram • Facebook • Zomato</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2026 Sneha Sarkar | Concept website project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: `0px 0px -100px 0px`
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(`visible`);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener(`DOMContentLoaded`, () => {
+            const fadeElements = document.querySelectorAll(`.fade-in`);
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById(`mobileMenu`);
+            menu.classList.toggle(`active`);
+        }
+
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById(`lightbox`);
+            const lightboxImage = document.getElementById(`lightboxImage`);
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add(`active`);
+            document.body.style.overflow = `hidden`;
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById(`lightbox`);
+            lightbox.classList.remove(`active`);
+            document.body.style.overflow = `auto`;
+        }
+
+        function filterGallery(category) {
+            const items = document.querySelectorAll(`.gallery-item`);
+            const buttons = document.querySelectorAll(`.gallery-filter-btn`);
+            
+            buttons.forEach(btn => {
+                if (btn.getAttribute(`data-filter`) === category) {
+                    btn.classList.add(`btn-primary`);
+                    btn.style.background = `var(--coffee-dark)`;
+                    btn.style.color = `white`;
+                } else {
+                    btn.classList.remove(`btn-primary`);
+                    btn.style.background = `var(--beige)`;
+                    btn.style.color = `var(--soft-black)`;
+                }
+            });
+
+            items.forEach(item => {
+                if (category === `all` || item.getAttribute(`data-category`) === category) {
+                    item.style.display = `block`;
+                    setTimeout(() => {
+                        item.style.opacity = `1`;
+                        item.style.transform = `scale(1)`;
+                    }, 10);
+                } else {
+                    item.style.opacity = `0`;
+                    item.style.transform = `scale(0.8)`;
+                    setTimeout(() => {
+                        item.style.display = `none`;
+                    }, 300);
+                }
+            });
+        }
+
+        document.querySelectorAll(`a[href^="#"]`).forEach(anchor => {
+            anchor.addEventListener(`click`, function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute(`href`));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: `smooth`
+                    });
+                }
+            });
+        });
+
+        document.querySelector(`.contact-form`).addEventListener(`submit`, (e) => {
+            e.preventDefault();
+            alert(`Thank you for your message! We'll get back to you soon.`);
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
